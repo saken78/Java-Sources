@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class main {
+public class hcr2 {
     public static void main(String[] args) {
 
         Scanner inputUser = new Scanner(System.in);
