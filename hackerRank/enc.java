@@ -53,7 +53,7 @@ class Karakter {
 
     void opponentAttack(Karakter opponent) {
         System.out.println("Attacking " + opponent.name);
-        this.health -= this.attack;
+        opponent.health -= this.attack;
     }
 
     void stats() {
