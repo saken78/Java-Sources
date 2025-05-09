@@ -63,7 +63,30 @@ class polymor {
         Pesawat[] hangar = new Pesawat[3];
 
         for (int i = 0; i < hangar.length; i++) {
-            hangar[i] = inputUser.nextLine();
+            System.out.print("Masukan jenis pesawat : (komrsil | tempur)");
+            String jenis = inputUser.nextLine();
+
+            System.out.print("Masukan nama pesawat nya : ");
+            String nama = inputUser.nextLine();
+
+            if (jenis.equalsIgnoreCase("tempur")) {
+
+                hangar[i] = new PesawatTempur(nama);
+
+            } else if (jenis.equalsIgnoreCase("komersil")) {
+
+                hangar[i] = new PesawatKomersial(nama);
+
+            } else {
+                System.out.println("pesawat tidak di kenali : ");
+                System.out.println("pesawat biasa :");
+                hangar[i] = new Pesawat(nama);
+            }
+        }
+
+        for (Pesawat pesawat : hangar) {
+            System.out.println(pesawat.nama);
+            pesawat.terbang();
         }
     }
 }
