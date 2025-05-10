@@ -1,20 +1,15 @@
-📌 Java Journey   
+💻 Java-Sources — A Clean Dive into Java, from Basics to Beyond
 
-🚀 Learning Java from Basics to Advanced
+Welcome to Java-Sources — a curated collection of Java code samples, exercises, and mini-projects designed to help you level up your skills. Whether you're just starting out or brushing up on the fundamentals, this repo's got your back.
 
-Welcome to Java Journey! This repository is dedicated to learning Java from the ground up. Here, you'll find various materials, code examples, and small projects to help you understand Java programming step by step.
+What's inside:
 
-📌 Why Java?
+    🔹 Core Java concepts — variables, control flow, data types, and more
 
-Java is one of the most popular programming languages because:
-✨ Cross-platform – Runs on Windows, macOS, Linux, and even Android.
-⚡ High performance – Features like JIT (Just-In-Time) compiler enhance speed.
-🛡 Strong security – Used in banking, enterprise systems, and more.
-🔗 Large community – Plenty of tutorials, frameworks, and libraries available.
-🛠 Setting Up the Environment
+    🔸 OOP essentials — classes, inheritance, polymorphism, encapsulation
 
-💡 Happy Coding! 🚀
+    🔹 Practice problems & solutions from platforms like HackerRank
 
-This README can be adjusted as you progress in learning Java. 🚀🔥
+    🔸 Clean code to learn from — no clutter, just clarity
 
-Keep Learning
+No overcomplicated stuff. Just practical Java, the way it should be.
