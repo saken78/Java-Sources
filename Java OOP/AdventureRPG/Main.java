@@ -36,6 +36,9 @@ public class Main {
         for (Karakter my : tim) {
             my.role();
             my.action();
+            if (my instanceof CanAttack) {
+                ((CanAttack) my).attack();
+            }
 
             System.out.println();
         }
