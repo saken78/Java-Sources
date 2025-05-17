@@ -18,6 +18,7 @@ import java.util.ArrayList;
 public class Main {
     public static void main(String[] args) {
         ArrayList<String> nama = new ArrayList<>();
+        ArrayList<Double> average = new ArrayList<>();
 
         Scanner inputUser = new Scanner(System.in);
 
@@ -32,10 +33,12 @@ public class Main {
             nama.add(put);
         }
 
-        Campus other = new Campus(nama);
-
         Point other1 = new Point(nama);
         other1.value();
 
+        average = other1.value();
+
+        Campus other = new Campus(nama, average);
+        other.show();
     }
 }
