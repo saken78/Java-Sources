@@ -10,8 +10,9 @@ public class Point {
         this.sended = sender;
     }
 
-    public void value() {
+    public ArrayList<Double> value() {
         ArrayList<String> done = new ArrayList<>();
+        ArrayList<Double> allAverage = new ArrayList<>();
 
         Scanner inputUser = new Scanner(System.in);
 
@@ -21,29 +22,39 @@ public class Point {
         int inx = 0;
 
         for (String n : this.sended) {
+
+            if (done.contains(n)) {
+                System.out.println("Nama tidak boleh sama");
+                continue;
+            }
+
             avrg = 0;
             bfr = 0;
             inx = 0;
-            if (!done.contains(n)) {
-                System.out.println("Nama : " + n);
-                System.out.println();
 
-                System.out.print("Berapa banyak nilai : ");
-                inx = inputUser.nextInt();
+            System.out.println("Nama : " + n);
+            System.out.print("Berapa banyak nilai : ");
+            inx = inputUser.nextInt();
 
-                for (int i = 1; i <= inx; i++) {
-                    System.out.print("Nilai ke-" + i + " : ");
-                    value = inputUser.nextInt();
-                    bfr = bfr + value;
-                }
-                done.add(n);
-            } else {
-                System.out.println("Nama tidak boleh sama");
+            if (inx == 0) {
+                System.out.println("Jumlah nilai tidak boleh noll");
+                break;
             }
 
-            avrg = bfr / inx;
+            for (int i = 1; i <= inx; i++) {
+                System.out.print("Nilai ke-" + i + " : ");
+                value = inputUser.nextInt();
+                bfr = bfr + value;
+            }
+
+            done.add(n);
+            avrg = bfr / (double) inx;
+            allAverage.add(avrg);
             System.out.println("Nama : " + n + " Average : " + avrg);
+            System.out.println();
         }
+
+        return allAverage;
 
     }
 }
