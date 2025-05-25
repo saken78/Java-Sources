@@ -10,18 +10,21 @@ public class Assasin extends Hero {
 
     @Override
     protected void show() {
-        System.out.println("\nNama\t: " + this.nama);
-        System.out.println("Health\t: " + this.health);
-        System.out.println("Attack\t: " + this.basicAttack);
+        super.show();
+        System.out.println("Attack\t: " + this.getBasicAttack());
         System.out.println("Type\t: " + this.Type);
     }
 
     @Override
     protected void takeDamage(double basicAttack) {
         double defence = basicAttack - this.physicalDefence;
-        this.health -= defence;
+        this.setHealthAttack(defence);
+    }
+
+    // override method abstract
+    public void levelUp() {
+        this.setLevelUp(2);
     }
 
 }
-
 
