@@ -10,8 +10,7 @@ public class Fighter extends Hero {
 
     @Override
     protected void show() {
-        System.out.println("\nNama\t: " + this.nama);
-        System.out.println("Health\t: " + this.health);
+        super.show();
         System.out.println("Defence\t: " + this.physicalDefence);
         System.out.println("Type\t: " + this.type);
     }
@@ -19,10 +18,14 @@ public class Fighter extends Hero {
     @Override
     protected void takeDamage(double basicAttack) {
         double defence = basicAttack - this.physicalDefence;
-        this.health -= defence;
+        this.setHealthAttack(defence);
 
     }
 
-}
+    // override method abstract
+    public void levelUp() {
+        this.setLevelUp(1);
+    }
 
+}
 
