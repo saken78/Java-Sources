@@ -18,6 +18,7 @@ public class Assasin extends Hero {
     @Override
     protected void takeDamage(double basicAttack) {
         double defence = basicAttack - this.physicalDefence;
+        System.out.println(this.getNama() + " menerima " + defence);
         this.setHealthAttack(defence);
     }
 
@@ -26,5 +27,9 @@ public class Assasin extends Hero {
         this.setLevelUp(2);
     }
 
-}
+    public void specialAbillity() {
+        this.setIncreaseBasicAttack(80);
+        System.out.println("\n" + this.getNama() + " mendapatkan buff damage " + this.getBasicAttack());
+    }
 
+}
