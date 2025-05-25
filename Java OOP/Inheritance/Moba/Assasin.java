@@ -9,7 +9,7 @@ public class Assasin extends Hero {
     }
 
     @Override
-    void show() {
+    protected void show() {
         System.out.println("\nNama\t: " + this.nama);
         System.out.println("Health\t: " + this.health);
         System.out.println("Attack\t: " + this.basicAttack);
@@ -17,7 +17,7 @@ public class Assasin extends Hero {
     }
 
     @Override
-    void takeDamage(double basicAttack) {
+    protected void takeDamage(double basicAttack) {
         double defence = basicAttack - this.physicalDefence;
         this.health -= defence;
     }
