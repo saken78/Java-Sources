@@ -2,7 +2,7 @@ package inheritance.Moba;
 
 public class Mage extends Hero {
     private String type = "Mage";
-    private double magicPower = basicAttack * 3;
+    private double magicPower = this.getBasicAttack() * 3;
     private double physicalDefence = 5;
 
     Mage(String namaInput, double healthInput, double basicAttackInput) {
@@ -11,8 +11,7 @@ public class Mage extends Hero {
 
     @Override
     protected void show() {
-        System.out.println("\nNama\t: " + this.nama);
-        System.out.println("Health\t: " + this.health);
+        super.show();
         System.out.println("Magic\t: " + this.magicPower);
         System.out.println("Type\t: " + this.type);
     }
@@ -20,10 +19,14 @@ public class Mage extends Hero {
     @Override
     protected void takeDamage(double basicAttack) {
         double defence = basicAttack - this.physicalDefence;
-        this.health -= defence;
+        this.setHealthAttack(defence);
 
     }
 
-}
+    // override method abstract
+    public void levelUp() {
+        this.setLevelUp(1);
+    }
 
+}
 
