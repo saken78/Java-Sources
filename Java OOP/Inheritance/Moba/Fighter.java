@@ -18,6 +18,7 @@ public class Fighter extends Hero {
     @Override
     protected void takeDamage(double basicAttack) {
         double defence = basicAttack - this.physicalDefence;
+        System.out.println(this.getNama() + " menerima " + defence);
         this.setHealthAttack(defence);
 
     }
@@ -27,5 +28,9 @@ public class Fighter extends Hero {
         this.setLevelUp(1);
     }
 
-}
+    public void specialAbillity() {
+        this.physicalDefence += 20;
+        System.out.println("\n" + this.getNama() + " menerima buff defence " + this.physicalDefence);
+    }
 
+}
