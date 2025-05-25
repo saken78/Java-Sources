@@ -1,6 +1,6 @@
 package inheritance.Moba;
 
-public class Hero {
+public abstract class Hero {
     String nama;
     double health;
     double basicAttack;
@@ -11,16 +11,16 @@ public class Hero {
         this.basicAttack = basicAttackInput;
     }
 
-    void attack(Hero enemy) {
+    protected void attack(Hero enemy) {
         System.out.println("\n" + this.nama + " attacking " + enemy.nama);
         enemy.takeDamage(basicAttack);
     }
 
-    void takeDamage(double basicAttack) {
+    protected void takeDamage(double basicAttack) {
         this.health = this.health - basicAttack;
     }
 
-    void show() {
+    protected void show() {
         System.out.println("\nNama : " + this.nama);
         System.out.println("Health : " + this.health);
         System.out.println("Attack Power : " + this.basicAttack);
