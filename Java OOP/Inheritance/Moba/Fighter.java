@@ -24,13 +24,18 @@ public class Fighter extends Hero {
     }
 
     // override method abstract
+    @Override
     public void levelUp() {
         this.setLevelUp(1);
     }
 
+    // ovveride method abstract
+    @Override
     public void specialAbillity() {
         this.physicalDefence += 20;
         System.out.println("\n" + this.getNama() + " menerima buff defence " + this.physicalDefence);
     }
 
 }
+
+
