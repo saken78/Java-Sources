@@ -1,6 +1,6 @@
 package inheritance.Moba;
 
-public class Assasin extends Hero {
+public class Assasin extends Hero implements IAttack, IBuff {
     private String Type = "Assasin";
     private double physicalDefence = 5;
 
@@ -8,16 +8,33 @@ public class Assasin extends Hero {
         super(namaInput, healthInput, basicAttackInput);
     }
 
-    @Override
+    @Override // interface
+    public void buff() {
+        this.setIncreaseBasicAttack(80);
+        System.out.println("\n" + this.getNama() + " mendapatkan buff physical attack " + this.getBasicAttack());
+    }
+
+    @Override // interface
+    public void attack(Hero enemy) {
+        System.out.println("\n" + this.getNama() + " attacking " + enemy.getNama());
+        enemy.takeDamagedPhysic(this.getBasicAttack());
+    }
+
+    @Override // method hero
     protected void show() {
         super.show();
         System.out.println("Attack\t: " + this.getBasicAttack());
         System.out.println("Type\t: " + this.Type);
     }
 
-    @Override
-    protected void takeDamage(double basicAttack) {
+    public void takeDamagedPhysic(double basicAttack) {
         double defence = basicAttack - this.physicalDefence;
+        System.out.println(this.getNama() + " menerima " + defence);
+        this.setHealthAttack(defence);
+    }
+
+    public void takeDamagedMagic(double magicPowerInput) {
+        double defence = magicPowerInput - this.physicalDefence;
         System.out.println(this.getNama() + " menerima " + defence);
         this.setHealthAttack(defence);
     }
@@ -28,12 +45,4 @@ public class Assasin extends Hero {
         this.setLevelUp(2);
     }
 
-    @Override
-    public void specialAbillity() {
-        this.setIncreaseBasicAttack(80);
-        System.out.println("\n" + this.getNama() + " mendapatkan buff damage " + this.getBasicAttack());
-    }
-
 }
-
-
