@@ -1,14 +1,25 @@
 package inheritance.Moba;
 
-public class Mage extends Hero {
+public class Mage extends Hero implements IAttack, IBuff, IDebuff {
     private String type = "Mage";
     private double magicPower;
-    private double physicalDefence = 5;
 
     Mage(String namaInput, double healthInput, double magicPowerInput) {
         super(namaInput, healthInput, magicPowerInput);
 
         this.magicPower = this.getBasicAttack();
+    }
+
+    @Override // interface
+    public void buff() {
+        this.setIncreaseMagicPower(40);
+        System.out.println("\n" + this.getNama() + " mendapatkan buff damage " + this.getMagicPower());
+    }
+
+    @Override // interface
+    public void attack(Hero enemy) {
+        System.out.println("\n" + this.getNama() + " attacking " + enemy.getNama());
+        enemy.takeDamagedMagic(this.getMagicPower());
     }
 
     @Override
@@ -18,25 +29,28 @@ public class Mage extends Hero {
         System.out.println("Type\t: " + this.type);
     }
 
-    @Override
-    protected void takeDamage(double basicAttack) {
-        double defence = basicAttack - this.physicalDefence;
+    // interface
+    public void takeDamagedPhysic(double basicAttack) {
+        double defence = basicAttack;
         System.out.println(this.getNama() + " menerima " + defence);
         this.setHealthAttack(defence);
+    }
 
+    // interface
+    public void takeDamagedMagic(double magicPowerInput) {
+        double defence = magicPowerInput;
+        System.out.println(this.getNama() + " menerima " + defence + " damage");
+        this.setHealthAttack(defence);
+    }
+
+    public void debuff() {
+        this.setDecreaseMagicPower(30);
     }
 
     // override method abstract
     @Override
     public void levelUp() {
         this.setLevelUp(1);
-    }
-
-    @Override
-    public void specialAbillity() {
-        // increasing through damage
-        this.setIncreaseMagicPower(50);
-        System.out.println("\n" + this.getNama() + " mendapatkan buff damage " + this.getMagicPower());
     }
 
 }
