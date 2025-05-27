@@ -14,7 +14,6 @@ public class Main {
         Fighter hero4 = new Fighter("Thamuz", 1200, 40);
 
         ArrayList<Hero> kumpulanHero = new ArrayList<Hero>();
-        ArrayList<Mage> HeroMage = new ArrayList<Mage>();
 
         // HeroMage.add(hero2);
 
@@ -26,6 +25,11 @@ public class Main {
         for (Hero hero : kumpulanHero) {
             hero.show();
         }
+
+        hero3.specialAbillity();
+        
+        hero1.attack(hero3);
+        hero3.show();
 
         // next debuff
 
