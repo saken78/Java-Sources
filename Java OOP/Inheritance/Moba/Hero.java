@@ -101,15 +101,14 @@ public abstract class Hero {
     }
 
     // common method
-
     protected void attack(Hero enemy) {
         System.out.println("\n" + this.nama + " attacking " + enemy.nama);
-        this.basicAttack = this.magicPower;
-        enemy.takeDamage(basicAttack);
+        // this.basicAttack = this.magicPower;
+        enemy.takeDamage(this.basicAttack);
     }
 
     protected void takeDamage(double basicAttack) {
-        this.health = this.health - basicAttack;
+        this.health = this.health - this.basicAttack;
     }
 
     protected void show() {
@@ -120,4 +119,5 @@ public abstract class Hero {
     }
 
 }
+
 
