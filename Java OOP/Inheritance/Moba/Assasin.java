@@ -23,13 +23,17 @@ public class Assasin extends Hero {
     }
 
     // override method abstract
+    @Override
     public void levelUp() {
         this.setLevelUp(2);
     }
 
+    @Override
     public void specialAbillity() {
         this.setIncreaseBasicAttack(80);
         System.out.println("\n" + this.getNama() + " mendapatkan buff damage " + this.getBasicAttack());
     }
 
 }
+
+
