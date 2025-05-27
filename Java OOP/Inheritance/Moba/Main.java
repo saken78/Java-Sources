@@ -1,7 +1,10 @@
 package inheritance.Moba;
 
+import java.util.ArrayList;
+
 public class Main {
     public static void main(String[] args) {
+
         Assasin hero1 = new Assasin("Ling", 1000, 90);
 
         Mage hero2 = new Mage("Lunox", 1000, 70);
@@ -10,11 +13,19 @@ public class Main {
 
         Fighter hero4 = new Fighter("Thamuz", 1200, 40);
 
-        hero3.specialAbillity();
-        hero2.specialAbillity();
-        hero2.attack(hero3);
-        hero3.show();
-        // hero2.attack(hero3);
+        ArrayList<Hero> kumpulanHero = new ArrayList<Hero>();
+        ArrayList<Mage> HeroMage = new ArrayList<Mage>();
+
+        // HeroMage.add(hero2);
+
+        kumpulanHero.add(hero1);
+        kumpulanHero.add(hero2);
+        kumpulanHero.add(hero3);
+        kumpulanHero.add(hero4);
+
+        for (Hero hero : kumpulanHero) {
+            hero.show();
+        }
 
         // next debuff
 
