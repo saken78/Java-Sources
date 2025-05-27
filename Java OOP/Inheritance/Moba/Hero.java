@@ -1,6 +1,6 @@
 package inheritance.Moba;
 
-public abstract class Hero {
+public abstract class Hero implements ITakeDamaged {
 
     // atribut superclass
     private String nama;
@@ -90,21 +90,11 @@ public abstract class Hero {
     }
 
     // abstract class
-    public abstract void specialAbillity();
-
-    // abstract class
     public abstract void levelUp();
 
     // method levelling
     public void setLevelUp(int bufferLevel) {
         this.level += bufferLevel;
-    }
-
-    // common method
-    protected void attack(Hero enemy) {
-        System.out.println("\n" + this.nama + " attacking " + enemy.nama);
-        // this.basicAttack = this.magicPower;
-        enemy.takeDamage(this.basicAttack);
     }
 
     protected void takeDamage(double basicAttack) {
@@ -119,5 +109,3 @@ public abstract class Hero {
     }
 
 }
-
-
