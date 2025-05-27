@@ -13,25 +13,25 @@ public class Main {
 
         Fighter hero4 = new Fighter("Thamuz", 1200, 40);
 
-        ArrayList<Hero> kumpulanHero = new ArrayList<Hero>();
+        Mage hero5 = new Mage("Alice", 1000, 120);
 
-        // HeroMage.add(hero2);
+        ArrayList<Hero> kumpulanHero = new ArrayList<Hero>();
 
         kumpulanHero.add(hero1);
         kumpulanHero.add(hero2);
         kumpulanHero.add(hero3);
         kumpulanHero.add(hero4);
+        kumpulanHero.add(hero5);
 
         for (Hero hero : kumpulanHero) {
             hero.show();
         }
 
-        hero3.specialAbillity();
-        
-        hero1.attack(hero3);
-        hero3.show();
+        hero1.buff();
 
-        // next debuff
+        hero1.attack(hero5);
+
+        hero5.show();
 
     }
 }
