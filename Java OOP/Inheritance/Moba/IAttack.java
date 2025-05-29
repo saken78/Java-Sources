@@ -4,5 +4,3 @@ public interface IAttack {
 
     public void attack(Hero enemy);
 }
-
-
