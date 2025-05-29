@@ -51,5 +51,3 @@ public class Tanker extends Hero implements IAttack, IBuff {
     }
 
 }
-
-
