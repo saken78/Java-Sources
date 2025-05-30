@@ -161,13 +161,48 @@ public class Main {
                     }
 
                 } else if (heroch.equalsIgnoreCase("rafaela")) {
-                    System.out.println("Rafaela tidak bisa menyerang hanyak healing ");
+                    System.out.println("Rafaela tidak bisa menyerang hanya bisa healing ");
                 }
 
             } else if (choose.equalsIgnoreCase("buff")) {
-                System.out.println();
+                System.out.print("Hero apa yang di buff ? ");
+                String heroBuff = inputUser.nextLine();
+
+                if (heroBuff.equalsIgnoreCase("ling")) {
+                    hero1.buff();
+                } else if (heroBuff.equalsIgnoreCase("lunox")) {
+                    hero2.buff();
+                } else if (heroBuff.equalsIgnoreCase("atlas")) {
+                    hero3.buff();
+                } else if (heroBuff.equalsIgnoreCase("thamuz")) {
+                    hero4.buff();
+                } else if (heroBuff.equalsIgnoreCase("alice")) {
+                    hero5.buff();
+                } else if (heroBuff.equalsIgnoreCase("rafaela")) {
+                    hero6.buff();
+                } else {
+                    System.out.println("Hero tidak ada");
+                }
 
             } else if (choose.equalsIgnoreCase("debuff")) {
+                System.out.print("Hero apa yang di buff ? ");
+                String heroDebuff = inputUser.nextLine();
+
+                if (heroDebuff.equalsIgnoreCase("ling")) {
+                    hero1.buff();
+                } else if (heroDebuff.equalsIgnoreCase("lunox")) {
+                    hero2.buff();
+                } else if (heroDebuff.equalsIgnoreCase("atlas")) {
+                    hero3.buff();
+                } else if (heroDebuff.equalsIgnoreCase("thamuz")) {
+                    hero4.buff();
+                } else if (heroDebuff.equalsIgnoreCase("alice")) {
+                    hero5.buff();
+                } else if (heroDebuff.equalsIgnoreCase("rafaela")) {
+                    hero6.buff();
+                } else {
+                    System.out.println("Hero tidak ada");
+                }
 
             } else if (choose.equalsIgnoreCase("exit")) {
                 start = false;
@@ -178,6 +213,8 @@ public class Main {
             }
 
         }
+
+        inputUser.close();
 
     }
 }
