@@ -22,7 +22,7 @@ public class Healer extends Hero implements IBuff, IDebuff, IRegen {
     @Override // interface
     public void debuff() {
         this.setHealthIncrease(23);
-        System.out.println("\n" + this.getNama() + " mendapatat debuff " + this.getHealth());
+        System.out.println("\n" + this.getNama() + " mendapatatkan debuff " + this.getHealth());
     }
 
     @Override
@@ -31,6 +31,7 @@ public class Healer extends Hero implements IBuff, IDebuff, IRegen {
         System.out.println("Type\t: " + this.type);
     }
 
+    @Override
     public void takeDamagedMagic(double magicPowerInput) {
         // double defence = magicPowerInput;
         // karena type mage tidak memiliki defence
@@ -39,16 +40,15 @@ public class Healer extends Hero implements IBuff, IDebuff, IRegen {
     }
 
     @Override
-    public void takeDamagedPhysic(double magicPower) {
-        double defence = magicPower;
-        System.out.println(this.getNama() + " menerima " + defence);
-        this.setHealthAttack(defence);
+    public void takeDamagedPhysic(double basicAttackInput) {
+        // double defence = basicAttackInput;
+        System.out.println(this.getNama() + " menerima " + basicAttackInput);
+        this.setHealthAttack(basicAttackInput);
     }
 
     @Override
     public void levelUp() {
         this.setLevelUp(1);
         this.setHealthIncrease(100);
-
     }
 }
