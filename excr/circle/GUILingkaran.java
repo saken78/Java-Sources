@@ -87,14 +87,27 @@ public class GUILingkaran extends javax.swing.JFrame {
 
     private void saveButtonActionPerformed(java.awt.event.ActionEvent evt) {                                           
         // TODO add your handling code here:
-        
+        String popup = "saved";
+        saveButton.setText(popup);
+        saveButton
         Circle lingkaran = new Circle();
-        lingkaran.setRadius(Double.parseDouble(radiusTextField.getText()));
-       
-        // display dengan string format suapaya tidak kebanyak angka di belakang koma
-        textAreaAnswer.setText("Radius: " + String.format("%.2f",lingkaran.getRadius()) + 
+        // make handle exception
+        try {
+            double radius = Double.parseDouble(radiusTextField.getText());
+            
+            if(radius <= 0){
+                areaAnswer.setText("error radius harus lebih besar dari 0");
+            }
+            
+            lingkaran.setRadius(radius);
+            
+            // display dengan string format suapaya tidak kebanyak angka di belakang koma
+            areaAnswer.setText("Radius: " + String.format("%.2f",lingkaran.getRadius()) + 
                 "\nKeliling : " + String.format("%.2f",lingkaran.hitungKeliling()) + "\nLuas : " + 
                 String.format("%.2f",lingkaran.hitungLuas()));
+        } catch (NumberFormatException e){
+            areaAnswer.setText("input harus angka!");
+        }
     }                                          
 
     /**
