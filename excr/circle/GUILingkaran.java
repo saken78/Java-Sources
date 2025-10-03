@@ -89,7 +89,7 @@ public class GUILingkaran extends javax.swing.JFrame {
         // TODO add your handling code here:
         
         Circle lingkaran = new Circle();
-        lingkaran.setRadius(Integer.parseInt(radiusTextField.getText()));
+        lingkaran.setRadius(Double.parseDouble(radiusTextField.getText()));
        
         // display dengan string format suapaya tidak kebanyak angka di belakang koma
         textAreaAnswer.setText("Radius: " + String.format("%.2f",lingkaran.getRadius()) + 
