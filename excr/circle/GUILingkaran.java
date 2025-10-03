@@ -89,7 +89,7 @@ public class GUILingkaran extends javax.swing.JFrame {
         // TODO add your handling code here:
         String popup = "saved";
         saveButton.setText(popup);
-        saveButton
+        
         Circle lingkaran = new Circle();
         // make handle exception
         try {
