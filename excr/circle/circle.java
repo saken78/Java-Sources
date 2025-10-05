@@ -1,6 +1,4 @@
 
-package calclulateCircle;
-
 public class Circle {
     // ku buat private smua
     private double radius;              // Jari-jari lingkaran
